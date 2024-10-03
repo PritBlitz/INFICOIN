@@ -6,6 +6,7 @@ public class Block {
     public String previousHash ;  // This will hold the previous blocks' hash
     private String data ;        // This will hokd our block data 
     private long timeStamp ; 
+    private int nonce  ; 
 
 
     public Block(String data , String previousHash) { 
@@ -18,7 +19,16 @@ public class Block {
 
     // applySha256 will help us calculate the hash 
     public String calculateHash() { 
-        String calculatedHash = cryp_util.applySHA256(previousHash + Long.toString(timeStamp) + data) ; 
+        String calculatedHash = cryp_util.applySHA256(previousHash + Long.toString(timeStamp) + Integer.toString(nonce) + data) ; 
         return calculatedHash ; 
+    }
+
+    public void mineBlock(int difficulty) { 
+        String target = new String(new char[difficulty]).replace('\0', '0') ; 
+        while(!hash.substring(0 , difficulty).equals(target)) { 
+            nonce++ ; 
+            hash = calculateHash() ; 
+        }
+        System.out.println("Block Mined!!! : " + hash); 
     }
 }
