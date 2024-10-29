@@ -1,3 +1,8 @@
 {
-  "java.project.sourcePaths": ["src/main/java"]
+  "java.project.sourcePaths": ["src/main/java"],
+  "java.project.referencedLibraries": [
+    "lib/bcprov-jdk15on-xxx.jar",
+    "lib/bcpkix-jdk15on-xxx.jar"
+  ],
+  "java.configuration.updateBuildConfiguration": "automatic"
 }

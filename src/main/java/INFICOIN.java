@@ -3,7 +3,7 @@ import com.google.gson.GsonBuilder;
 
 public class INFICOIN {
 
-    public static int difficulty = 7 ; 
+    public static int difficulty = 5 ; 
     // difficilty 5 : 3 sec each block 
     // difficilty 6 : 10 sec each block
     // difficilty 7 : 2 minute each block
